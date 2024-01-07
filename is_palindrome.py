@@ -1,7 +1,9 @@
+"""Check if a given character is a Palindrome."""
 import math
 
 
-def check_for_palindrome_using_loop(word: str) -> bool:
+def using_loop(word: str) -> bool:
+    """Function using a loop"""
     try:
         length = len(word)
 
@@ -19,7 +21,8 @@ def check_for_palindrome_using_loop(word: str) -> bool:
         print(e)
 
 
-def check_for_palindrome_using_recursion(word: str) -> bool:
+def using_recursion(word: str) -> bool:
+    """Function using  recursion"""
     try:
         length = len(word)
 
@@ -28,7 +31,7 @@ def check_for_palindrome_using_recursion(word: str) -> bool:
                 return True
             case _:
                 if word[0] == word[length - 1]:
-                    return check_for_palindrome_using_recursion(word[1 : length - 1])
+                    return using_recursion(word[1 : length - 1])
 
         return False
 
@@ -36,5 +39,5 @@ def check_for_palindrome_using_recursion(word: str) -> bool:
         print(e)
 
 
-print("True" if check_for_palindrome_using_loop("racecar") else "False")
-print("True" if check_for_palindrome_using_recursion("racecar") else "False")
+print("True" if using_loop("racecar") else "False")
+print("True" if using_recursion("racecar") else "False")
